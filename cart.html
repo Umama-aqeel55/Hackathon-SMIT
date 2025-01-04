@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMIT Mini Hackathon</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+  }
+  
+  header {
+    background-color: #f76ed4;
+    color: white;
+    padding: 10px;
+    text-align: right;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .cart-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;;
+  }
+  
+  .cart-icon img {
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  .cart-count {
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: larger;
+    color: #ff0000;
+    width: 20px;
+    
+  }
+  
+  .products {
+    display: flex;
+    gap: 25px;
+    margin: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: auto;
+  }
+  
+  .product img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .shop-now {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .cart {
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #abdbfa;
+    width: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+   .cart h2{
+    text-align: center;
+   }
+  
+  .cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart-summary {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <button style="border: none;">
+      <li class="cart-icon">
+        <img src="assets/cart.jpg" alt="Cart Icon">
+        <span class="cart-count">0</span>
+      </li>
+    </button>
+  </header>
+  <main>
+    <section class="products">
+      <div class="product" data-price="500" data-name="Product 1">
+        <img src="assets/cds_450_v2-1.png" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>Price: Rs. 500</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_112_v2-1.png" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>Price: Rs. 700</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_450_v2-1.png" alt="Product 2">
+        <h3>Product 3</h3>
+        <p>Price: Rs. 399</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_112_v2-1.png" alt="Product 2">
+        <h3>Product 4</h3>
+        <p>Price: Rs. 700</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_112_v2-1.png" alt="Product 2">
+        <h3>Product 6</h3>
+        <p>Price: Rs. 750</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_112_v2-1.png" alt="Product 2">
+        <h3>Product 7</h3>
+        <p>Price: Rs. 850</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_112_v2-1.png" alt="Product 2">
+        <h3>Product 8</h3>
+        <p>Price: Rs. 900</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_112_v2-1.png" alt="Product 2">
+        <h3>Product 9</h3>
+        <p>Price: Rs. 1000</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+      <div class="product" data-price="700" data-name="Product 2">
+        <img src="assets/cds_112_v2-1.png" alt="Product 2">
+        <h3>Product 10</h3>
+        <p>Price: Rs. 600</p>
+        <button class="shop-now">Shop Now</button>
+      </div>
+    </section>
+    <section class="cart">
+      <h2>Shopping Cart</h2>
+      <ul class="cart-items"></ul>
+      <div class="cart-summary">
+        <p>Total Price: <span class="total-price">0</span></p>
+        <p>Discount: <span class="discount">0</span></p>
+        <p>Final Price: <span class="final-price">0</span></p>
+      </div>
+    </section>
+  </main>
+  <script>// Initialize cart
+    const cart = {
+      items: [],
+      total: 0,
+      discount: 0,
+      finalPrice: 0,
+    };
+    
+    // Update cart UI
+    function updateCart() {
+      const cartCount = document.querySelector('.cart-count');
+      const cartItemsList = document.querySelector('.cart-items');
+      const totalPrice = document.querySelector('.total-price');
+      const discountElement = document.querySelector('.discount');
+      const finalPrice = document.querySelector('.final-price');
+    
+      cartCount.textContent = cart.items.length;
+    
+      // Update cart items
+      cartItemsList.innerHTML = '';
+      cart.items.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = ` ${item.name} - Rs. ${item.price} x ${item.quantity} <button class="increase" data-name="${item.name}">+</button> <button class="decrease" data-name="${item.name}">-</button> `;
+        cartItemsList.appendChild(li);
+      });
+    
+      // Update total, discount, and final price
+      cart.total = cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      cart.discount = cart.total > 1000 ? cart.total * 0.1 : 0; // 10% discount if total > 1000
+      cart.finalPrice = cart.total - cart.discount;
+    
+      totalPrice.textContent = cart.total;
+      discountElement.textContent = cart.discount;
+      finalPrice.textContent = cart.finalPrice;
+    }
+    
+    // Add item to cart
+    function addToCart(productName, productPrice) {
+      const existingItem = cart.items.find(item => item.name === productName);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.items.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+      updateCart();
+    }
+    
+    // Increase or decrease quantity
+    document.querySelector('.cart-items').addEventListener('click', e => {
+      if (e.target.classList.contains('increase')) {
+        const name = e.target.dataset.name;
+        const item = cart.items.find(item => item.name === name);
+        if (item) {
+          item.quantity += 1;
+        }
+      } else if (e.target.classList.contains('decrease')) {
+        const name = e.target.dataset.name;
+        const item = cart.items.find(item => item.name === name);
+        if (item && item.quantity > 1) {
+          item.quantity -= 1;
+        } else if (item) {
+          cart.items = cart.items.filter(item => item.name !== name);
+        }
+      }
+      updateCart();
+    });
+    
+    // Add "Shop Now" button functionality
+    document.querySelectorAll('.shop-now').forEach(button => {
+      button.addEventListener('click', () => {
+        const product = button.closest('.product');
+        const productName = product.dataset.name;
+        const productPrice = parseInt(product.dataset.price);
+        addToCart(productName, productPrice);
+      });
+    });</script>
+</body>
+</html>
